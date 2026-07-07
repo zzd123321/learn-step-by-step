@@ -2,15 +2,17 @@
 
 ## 当前 lesson
 
-- L001：TypeScript 到底解决了什么问题：从 JavaScript 的运行时错误到类型系统
+- L002：TypeScript 编译流程与 tsconfig.json 入门
 
 ## 已讲授状态
 
 - L001：已讲授
+- L002：已讲授
 
 ## 小练习状态
 
 - L001：待完成
+- L002：待完成
 
 ## 已验证命令
 
@@ -21,6 +23,13 @@
 - `tsc`
 - `node dist/typed-solution.js`
 
+在 `tracks/01-typescript-vue3/examples/L002-compiler-flow/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc --listEmittedFiles --pretty false`
+- `node dist/index.js`
+- `sed -n '1,120p' dist/index.js`
+
 ## 下一节建议
 
-- L002：TypeScript 编译流程与 `tsconfig.json` 入门
+- L003：类型标注与类型推断
