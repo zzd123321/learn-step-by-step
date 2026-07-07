@@ -1,126 +1,46 @@
-# L002：Java 基础语法、变量与类型
+# L002：变量、基本类型与引用类型
 
-## 1. 学习目标
+Java 的变量声明比 JavaScript 更“啰嗦”，但这份啰嗦换来的是更早的错误暴露和更清晰的接口契约。本节只围绕一个问题展开：一个后端接口字段，在 Java 里应该用什么类型表达？
 
-完成本节后，你应该能：
-
-- 理解 Java 变量声明的基本格式。
-- 区分 Java 的基本类型和引用类型。
-- 理解 `final` 与 JavaScript `const` 的相似点和差异。
-- 用一个最小 Java 程序表达“商品库存与价格”这类接口数据。
-
-## 2. 前置知识
-
-你需要已经理解：
-
-- Java 程序需要先编译再运行。
-- `public static void main(String[] args)` 是当前示例程序的入口。
-- JavaScript 中 `let`、`const` 可以声明变量。
-
-本节不展开对象、数组、集合和方法拆分，只专注“变量如何声明、值是什么类型”。
-
-## 3. Java 与 JavaScript 的对应关系及差异
-
-| 视角 | Java | JavaScript |
-| --- | --- | --- |
-| 变量声明 | `int stock = 12;` | `let stock = 12;` |
-| 类型位置 | 类型写在变量名前 | 变量本身不写类型 |
-| 类型检查 | 编译期检查，类型不匹配会编译失败 | 多数类型问题运行时才暴露 |
-| 数字类型 | `int`、`long`、`double` 等多个数字类型 | 常用 `number`，另有 `bigint` |
-| 字符串 | `String`，引用类型 | `string`，原始类型 |
-| 常量 | `final double rate = 0.1;` | `const rate = 0.1;` |
-
-JavaScript 中你可以写：
-
-```js
-let stock = 12;
-stock = "sold out";
-```
-
-Java 中不能这样写：
+先看一句 Java 变量声明：
 
 ```java
 int stock = 12;
-stock = "sold out";
 ```
 
-因为 `stock` 已经被声明为 `int`，只能保存整数。这个错误会在 `javac` 编译阶段被发现。
+它的结构是：
 
-## 4. 概念解析与心智模型
-
-### 变量声明格式
-
-Java 最常见的变量声明格式是：
-
-```java
+```text
 类型 变量名 = 初始值;
 ```
 
-例如：
+和 JavaScript 的 `let stock = 12` 相比，Java 要求你在变量名前写出类型。`stock` 一旦声明为 `int`，后续就不能再赋值成字符串。
 
-```java
-int stock = 12;
-double price = 99.90;
-boolean available = true;
-String productName = "Wireless Mouse";
-```
+## 从接口字段理解类型
 
-你可以把 Java 变量理解为“带标签的盒子”：
+假设商品摘要接口返回：
 
-- `int` 盒子只能放整数。
-- `double` 盒子放小数。
-- `boolean` 盒子只放 `true` 或 `false`。
-- `String` 变量保存的是对字符串对象的引用。
-
-### 基本类型与引用类型
-
-本节先认识两类：
-
-- 基本类型（primitive type，基本类型）：直接保存简单值，例如 `int`、`double`、`boolean`、`char`。
-- 引用类型（reference type，引用类型）：变量里保存的是对象的引用，例如 `String`。
-
-先不用纠结内存细节。当前阶段你只需要记住：Java 比 JavaScript 更早、更明确地要求你说明数据类型。
-
-### `final` 与 `const`
-
-`final` 表示这个变量赋值后不能再指向新值：
-
-```java
-final double discountRate = 0.10;
-```
-
-这和 JavaScript 的 `const` 很像，但不要简单等同：
-
-- 对基本类型来说，`final int count = 1;` 之后不能改成 `2`。
-- 对引用类型来说，`final` 限制的是“引用不能改指向另一个对象”，不代表对象内部一定不可变。
-
-本节示例只使用基本类型的 `final`，先把“不可重新赋值”这个核心点吃透。
-
-## 5. 心智模型
-
-前端写接口数据时，经常先想“这个字段长什么样”：
-
-```js
+```json
 {
-  productName: "Wireless Mouse",
-  stock: 12,
-  price: 99.90,
-  available: true
+  "productName": "Wireless Mouse",
+  "stock": 12,
+  "price": 99.9,
+  "available": true
 }
 ```
 
-Java 会逼你更早回答一个问题：每个字段到底是什么类型？
+前端关心这些字段怎么展示，后端还要更早决定字段类型：
 
-- `productName` 是文本，所以用 `String`。
-- `stock` 是库存整数，所以用 `int`。
-- `price` 是价格小数，所以用 `double`。
-- `available` 是是否可售，所以用 `boolean`。
+- `productName` 是文本，用 `String`。
+- `stock` 是库存整数，用 `int`。
+- `price` 是价格小数，本节先用 `double` 演示。
+- `available` 是是否可售，用 `boolean`。
 
-这就是后端开发里“数据契约”的雏形。类型越清楚，接口字段越不容易含糊。
+这就是 Java 静态类型的价值：接口字段不是临时拼出来的“差不多能用”的值，而是一组明确的数据契约。
 
-## 6. 可运行代码
+## 最小示例：商品摘要
 
-文件位置：`tracks/02-java-springboot/examples/L002-variables-and-types/ProductSummary.java`
+示例文件：[ProductSummary.java](/Users/zhuzhendong/Documents/前端转全栈/learn-step-by-step/tracks/02-java-springboot/examples/L002-variables-and-types/ProductSummary.java)
 
 ```java
 public class ProductSummary {
@@ -146,90 +66,66 @@ public class ProductSummary {
 }
 ```
 
-## 7. 代码逐行说明
+这段代码模拟的是一个很小的后端数据整理过程：准备商品名、库存、价格和可售状态，然后计算折后价，最后模拟下单后库存减少。
 
-```java
-public class ProductSummary {
+## 一行一行看关键规则
+
+`String productName = "Wireless Mouse";` 声明商品名称。`String` 是引用类型（reference type，引用类型），它表示变量中保存的是对字符串对象的引用。你可以先把它理解成 Java 里最常用的文本类型。
+
+`int stock = 12;` 声明库存。`int` 是基本类型（primitive type，基本类型），适合常见整数。和 JavaScript 不同，Java 的整数、小数、布尔值、字符都有明确类型。
+
+`double price = 99.90;` 声明价格。`double` 是双精度浮点数。它适合演示小数语法，但真实订单金额不建议长期直接用 `double`，因为浮点数存在精度问题。后面讲金额计算时会学习 `BigDecimal`。
+
+`boolean available = stock > 0;` 声明可售状态。`stock > 0` 是一个条件表达式，结果只能是 `true` 或 `false`。Java 不会像 JavaScript 那样把很多值自动当作 truthy 或 falsy 使用。
+
+`char currencySymbol = '$';` 声明单个字符。`char` 用单引号，`String` 用双引号，所以 `'$'` 和 `"$"` 不是同一种类型。
+
+`final double discountRate = 0.10;` 声明折扣率，并且不允许重新赋值。`final` 可以类比 JavaScript 的 `const`：它限制变量不能再被赋成另一个值。要注意，`final` 修饰引用类型时，限制的是引用不能改指向，不等于对象内部一定不可变。
+
+`double discountedPrice = price * (1 - discountRate);` 根据价格和折扣率计算折后价。Java 的算术运算符和 JavaScript 很接近，但参与运算的值必须符合类型规则。
+
+`stock = stock - 1;` 模拟下单后库存减少。因为 `stock` 没有被 `final` 修饰，所以可以重新赋值。
+
+## JavaScript 对比
+
+JavaScript 允许变量保存不同类型的值：
+
+```js
+let stock = 12;
+stock = "sold out";
 ```
 
-定义一个公开类 `ProductSummary`。文件名必须是 `ProductSummary.java`。
-
-```java
-public static void main(String[] args) {
-```
-
-程序入口。JVM 从这里开始执行。
-
-```java
-String productName = "Wireless Mouse";
-```
-
-声明一个字符串变量，保存商品名称。`String` 是引用类型。
+Java 不允许：
 
 ```java
 int stock = 12;
+stock = "sold out";
 ```
 
-声明一个整数变量，保存库存数量。`int` 适合常见整数。
+这不是 Java “不灵活”，而是它选择在编译阶段提前挡住类型不一致的问题。后端接口一旦规模变大，这种约束会帮助团队减少很多“字段一会儿是数字、一会儿是字符串”的联调问题。
 
-```java
-double price = 99.90;
-```
-
-声明一个小数变量，保存价格。`double` 是双精度浮点数。真实金融金额后续通常会用 `BigDecimal`，本节先用 `double` 学语法。
-
-```java
-boolean available = stock > 0;
-```
-
-声明布尔变量。`stock > 0` 的结果只能是 `true` 或 `false`。
-
-```java
-char currencySymbol = '$';
-```
-
-声明字符变量。`char` 使用单引号，表示单个字符。
+`final` 和 `const` 的相似点是不能重新赋值：
 
 ```java
 final double discountRate = 0.10;
 ```
 
-声明不可重新赋值的折扣率。`final` 类似 JavaScript 的 `const`。
-
-```java
-double discountedPrice = price * (1 - discountRate);
+```js
+const discountRate = 0.10;
 ```
 
-计算折后价格。Java 的加减乘除符号和 JavaScript 很接近。
+但它们都不应该被误解成“深度不可变”。对于对象，是否能修改内部状态，要看对象本身和 API 设计。
 
-```java
-System.out.println("Product: " + productName);
-```
+## 编译和运行
 
-打印商品信息。字符串拼接也使用 `+`。
-
-```java
-stock = stock - 1;
-```
-
-模拟下单后库存减少。因为 `stock` 不是 `final`，所以可以重新赋值。
-
-## 8. 运行方式
-
-为了避免把 `.class` 编译产物提交到仓库，本节继续把输出放到临时目录：
+继续把 `.class` 输出到临时目录，避免提交构建产物：
 
 ```bash
 javac -d /tmp/learn-step-java-l002 tracks/02-java-springboot/examples/L002-variables-and-types/ProductSummary.java
 java -cp /tmp/learn-step-java-l002 ProductSummary
 ```
 
-## 9. 预期结果
-
-应该看到商品名、库存、可售状态、原价、折后价，以及下单后的库存。
-
-## 10. 实际运行结果
-
-已在本机真实执行编译和运行命令，结果如下：
+已真实执行，输出如下：
 
 ```text
 Product: Wireless Mouse
@@ -240,86 +136,61 @@ Discounted price: $89.91000000000001
 Stock after one order: 11
 ```
 
-验证结论：本节代码已通过本机 Java `25.0.3 LTS` 编译和运行验证。
+验证环境：本机 Java `25.0.3 LTS`，`javac 25.0.3`。
 
-注意：`89.91000000000001` 是浮点数精度问题的体现。它不是 Java 独有，JavaScript 里也会遇到类似问题，例如 `0.1 + 0.2`。真实金额计算后续会学习 `BigDecimal`。
+这里的 `89.91000000000001` 很值得注意。它来自浮点数精度问题，不是 Java 独有；JavaScript 中 `0.1 + 0.2` 也会出现类似现象。真实金额计算要使用更适合十进制精确计算的类型和规则。
 
-## 11. 常见错误与排查方式
+## 常见误区
 
-### 错误 1：把字符串赋值给 `int`
+把字符串赋给整数变量会编译失败：
 
 ```java
 int stock = "12";
 ```
 
-排查方式：确认等号右侧的值和左侧类型匹配。`"12"` 是字符串，不是整数。
+`"12"` 是字符串，不是整数。如果你从 HTTP 请求里拿到的是字符串参数，后端需要显式转换并处理转换失败的情况。
 
-### 错误 2：字符和字符串混用
+字符和字符串也不能混用：
 
 ```java
 char currencySymbol = "$";
 ```
 
-排查方式：`char` 用单引号，`String` 用双引号。应该写成 `char currencySymbol = '$';`。
+这里 `"$"` 是 `String`，不是 `char`。单个字符要写成：
 
-### 错误 3：修改 `final` 变量
+```java
+char currencySymbol = '$';
+```
+
+`final` 变量不能重新赋值：
 
 ```java
 final double discountRate = 0.10;
 discountRate = 0.20;
 ```
 
-排查方式：`final` 变量不能重新赋值。如果业务规则会变化，就不要把这个局部变量声明为 `final`。
+如果折扣率来自配置或运营规则，就不要把“会变化的业务值”硬编码成一个局部 `final` 常量。
 
-### 错误 4：用 `double` 直接处理真实订单金额
+## 放到真实接口里看
 
-本节用 `double` 是为了学习基础类型。真实订单金额直接用浮点数可能带来精度问题。
+后端返回给前端的 JSON 字段，最终往往来自 Java 对象。以后你会写类似 DTO（Data Transfer Object，数据传输对象）的类：
 
-排查方式：后续处理金额时优先考虑 `BigDecimal`，并明确小数位和舍入规则。
-
-## 12. 前端接口联调视角下的真实应用场景
-
-假设后端返回商品摘要接口：
-
-```json
-{
-  "productName": "Wireless Mouse",
-  "stock": 12,
-  "price": 99.9,
-  "available": true
+```java
+class ProductSummaryResponse {
+    String productName;
+    int stock;
+    double price;
+    boolean available;
 }
 ```
 
-前端关心字段能不能正常展示，后端则必须更早决定字段类型：
+前端联调时，如果你发现接口文档写 `stock` 是数字，但实际返回 `"12"` 字符串，就说明后端类型约定或序列化过程不稳定。学习 Java 类型不是为了背关键字，而是为了写出更稳定的接口契约。
 
-- `stock` 是数字还是字符串？
-- `price` 是否允许小数？
-- `available` 是布尔值，还是用 `0` / `1`？
-- 字段缺失时前端应该怎么兜底？
+## 练习
 
-Java 的静态类型会让后端在编码阶段就明确这些约定。等后面学到 Spring Boot Controller 和 DTO 时，这些类型会直接变成接口契约的一部分。
-
-## 13. 小练习
-
-1. 把 `stock` 改成 `0`，观察 `available` 的输出。
-2. 把 `discountRate` 改成 `0.20`，重新编译运行，观察折后价。
+1. 把 `stock` 改成 `0`，重新编译运行，观察 `available`。
+2. 把 `discountRate` 改成 `0.20`，观察折后价。
 3. 尝试给 `stock` 赋值 `"12"`，记录编译错误。
 4. 尝试修改 `final double discountRate`，记录编译错误。
 
-## 14. 复盘问题
-
-1. Java 变量声明为什么要写类型？
-2. `int`、`double`、`boolean`、`char` 分别适合表达什么数据？
-3. `String` 为什么不是基本类型？
-4. `final` 和 JavaScript `const` 有什么相似点？
-5. 为什么真实订单金额不建议长期用 `double` 表达？
-
-## 15. 与真实全栈项目的联系
-
-后端接口字段不是随手拼出来的文本，而是由类型、业务含义和序列化规则共同决定的。你现在看到的 `String productName`、`int stock`、`double price`、`boolean available`，以后会出现在 DTO、实体类、数据库字段映射和接口文档中。
-
-前端联调时，如果你发现字段类型和文档不一致，例如 `stock` 有时是数字、有时是字符串，这往往说明后端数据模型或接口契约不稳定。学习 Java 类型系统，就是在为后续写稳定接口打地基。
-
-## 16. 下一节预告
-
-下一节学习 L003：控制流与方法。我们会用 `if`、`switch`、循环和方法封装一个简单的“订单状态判断”逻辑，并继续和 JavaScript 写法对比。
+下一节会学习控制流与方法：用 `if`、`switch`、循环和方法封装一个简单的订单状态判断逻辑。
