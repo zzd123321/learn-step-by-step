@@ -1,0 +1,18 @@
+### 健康检查
+GET http://127.0.0.1:8004/health
+
+### 写入一次模拟前端事件
+POST http://127.0.0.1:8004/api/events
+Content-Type: application/json
+
+{
+  "action": "click_save_button",
+  "source": "vue-page",
+  "payload": {
+    "page": "/orders/new",
+    "component": "OrderForm"
+  }
+}
+
+### 查询已写入事件
+GET http://127.0.0.1:8004/api/events
