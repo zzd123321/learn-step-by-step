@@ -2,19 +2,21 @@
 
 ## 当前 lesson
 
-- L003：类型标注与类型推断
+- L004：基础类型、对象类型与函数类型
 
 ## 已讲授状态
 
 - L001：已讲授
 - L002：已讲授
 - L003：已讲授
+- L004：已讲授
 
 ## 小练习状态
 
 - L001：待完成
 - L002：待完成
 - L003：待完成
+- L004：待完成
 
 ## 已验证命令
 
@@ -39,6 +41,13 @@
 - `node dist/index.js`
 - `sed -n '1,160p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L004-basic-object-function-types/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,180p' dist/index.js`
+
 ## 下一节建议
 
-- L004：基础类型、对象类型与函数类型
+- L005：数组、元组与字面量类型
