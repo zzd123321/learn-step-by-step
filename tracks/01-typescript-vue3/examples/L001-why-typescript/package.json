@@ -1,0 +1,12 @@
+{
+  "name": "l001-why-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "tsc",
+    "start:js": "node src/runtime-error.js",
+    "start:ts-output": "node dist/typed-solution.js"
+  }
+}
