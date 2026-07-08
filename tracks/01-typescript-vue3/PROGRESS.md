@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L006：interface 与 type
+- L007：联合类型、交叉类型、可选属性与只读属性
 
 ## 已讲授状态
 
@@ -12,6 +12,7 @@
 - L004：已讲授
 - L005：已讲授
 - L006：已讲授
+- L007：已讲授
 
 ## 小练习状态
 
@@ -21,6 +22,7 @@
 - L004：待完成
 - L005：待完成
 - L006：待完成
+- L007：待完成
 
 ## 已验证命令
 
@@ -66,6 +68,13 @@
 - `node dist/index.js`
 - `sed -n '1,180p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L007-unions-intersections-properties/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,220p' dist/index.js`
+
 ## 下一节建议
 
-- L007：联合类型、交叉类型、可选属性与只读属性
+- L008：类型收窄与类型守卫
