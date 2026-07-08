@@ -1,0 +1,11 @@
+{
+  "name": "l008-narrowing-type-guards",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  }
+}
