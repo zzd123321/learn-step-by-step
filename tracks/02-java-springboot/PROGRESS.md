@@ -2,7 +2,7 @@
 
 ## 当前 lesson 编号
 
-- L016
+- L017
 
 ## 已讲授内容
 
@@ -22,6 +22,7 @@
 - L014：泛型入门与 `ApiResponse<T>`
 - L015：集合框架入门：从数组到 `List`
 - L016：`Set`：用唯一性表达业务规则
+- L017：`Map`：用 key 快速找到 value
 
 ## 练习已完成
 
@@ -77,10 +78,14 @@
 - L016：注释掉 `RolePermission` 的 `equals` 和 `hashCode`，观察权限数量变化。
 - L016：给 `RolePermission` 新增 `resourceId` 字段并参与唯一性判断。
 - L016：新增 `hasPermission(Set<RolePermission> permissions, String module, String action)` 方法。
+- L017：新增 `findOrderStatus(Map<String, OrderSummary> ordersById, String id)` 方法。
+- L017：把替换 `A1002` 改成新增 `A2001`，观察 `previous` 是否为 `null`。
+- L017：新增一个重复 ID 的订单，观察 `indexById` 最终保留哪一个。
+- L017：使用 `entrySet()` 打印所有订单 ID 和订单状态。
 
 ## 当前状态
 
-- 已完成 L001、L002、L003、L004、L005、L006、L007、L008、L009、L010、L011、L012、L013、L014、L015、L016 课程正文与最小可运行示例。
+- 已完成 L001、L002、L003、L004、L005、L006、L007、L008、L009、L010、L011、L012、L013、L014、L015、L016、L017 课程正文与最小可运行示例。
 - L001 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - L002 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - L003 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证；默认状态和自定义参数均已执行。
@@ -97,5 +102,6 @@
 - L014 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - L015 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - L016 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
+- L017 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - 已按新版课程输出规则重写 L001、L002 文档，去除冗长固定模板，改为围绕知识点展开的学习文档写法。
 - 重写后已重新编译并运行 L001、L002 示例，验证结果与文档记录一致。
