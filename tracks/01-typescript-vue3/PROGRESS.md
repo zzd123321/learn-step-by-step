@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L019：ESM 与 CommonJS 的差异
+- L020：TypeScript 中的模块解析
 
 ## 已讲授状态
 
@@ -25,6 +25,7 @@
 - L017：已讲授
 - L018：已讲授
 - L019：已讲授
+- L020：已讲授
 
 ## 小练习状态
 
@@ -47,6 +48,7 @@
 - L017：待完成
 - L018：待完成
 - L019：待完成
+- L020：待完成
 
 ## 已验证命令
 
@@ -190,6 +192,14 @@
 - `node dist/index.js`
 - `sed -n '1,160p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L020-module-resolution/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,200p' dist/services/order-service.js`
+- `sed -n '1,120p' dist/index.js`
+
 ## 下一节建议
 
-- L020：TypeScript 中的模块解析
+- L021：包管理、脚本命令与依赖边界
