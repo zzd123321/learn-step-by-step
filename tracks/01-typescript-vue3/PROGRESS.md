@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L010：泛型函数入门
+- L011：泛型约束
 
 ## 已讲授状态
 
@@ -16,6 +16,7 @@
 - L008：已讲授
 - L009：已讲授
 - L010：已讲授
+- L011：已讲授
 
 ## 小练习状态
 
@@ -29,6 +30,7 @@
 - L008：待完成
 - L009：待完成
 - L010：待完成
+- L011：待完成
 
 ## 已验证命令
 
@@ -102,6 +104,13 @@
 - `node dist/index.js`
 - `sed -n '1,220p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L011-generic-constraints/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,220p' dist/index.js`
+
 ## 下一节建议
 
-- L011：泛型约束
+- L012：泛型接口与泛型类型别名
