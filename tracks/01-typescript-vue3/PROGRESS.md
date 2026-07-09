@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L013：条件类型、映射类型与 infer 入门
+- L014：常用 Utility Types
 
 ## 已讲授状态
 
@@ -19,6 +19,7 @@
 - L011：已讲授
 - L012：已讲授
 - L013：已讲授
+- L014：已讲授
 
 ## 小练习状态
 
@@ -35,6 +36,7 @@
 - L011：待完成
 - L012：待完成
 - L013：待完成
+- L014：待完成
 
 ## 已验证命令
 
@@ -129,6 +131,13 @@
 - `node dist/index.js`
 - `sed -n '1,240p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L014-utility-types/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,220p' dist/index.js`
+
 ## 下一节建议
 
-- L014：常用 Utility Types
+- L015：类、构造函数与实例类型
