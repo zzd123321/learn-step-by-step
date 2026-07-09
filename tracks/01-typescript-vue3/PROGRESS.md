@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L016：访问修饰符与只读字段
+- L017：抽象类与接口的取舍
 
 ## 已讲授状态
 
@@ -22,6 +22,7 @@
 - L014：已讲授
 - L015：已讲授
 - L016：已讲授
+- L017：已讲授
 
 ## 小练习状态
 
@@ -41,6 +42,7 @@
 - L014：待完成
 - L015：待完成
 - L016：待完成
+- L017：待完成
 
 ## 已验证命令
 
@@ -156,6 +158,13 @@
 - `node dist/index.js`
 - `sed -n '1,220p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L017-abstract-class-vs-interface/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,260p' dist/index.js`
+
 ## 下一节建议
 
-- L017：抽象类与接口的取舍
+- L018：装饰器的使用边界
