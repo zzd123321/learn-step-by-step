@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L020：TypeScript 中的模块解析
+- L021：包管理、脚本命令与依赖边界
 
 ## 已讲授状态
 
@@ -26,6 +26,7 @@
 - L018：已讲授
 - L019：已讲授
 - L020：已讲授
+- L021：已讲授
 
 ## 小练习状态
 
@@ -49,6 +50,7 @@
 - L018：待完成
 - L019：待完成
 - L020：待完成
+- L021：待完成
 
 ## 已验证命令
 
@@ -200,6 +202,14 @@
 - `sed -n '1,200p' dist/services/order-service.js`
 - `sed -n '1,120p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L021-package-scripts-dependencies/` 下已真实执行：
+
+- `npm run check`
+- `npm run build`
+- `npm run start`
+- `npm run verify`
+- `sed -n '1,220p' package.json`
+
 ## 下一节建议
 
-- L021：包管理、脚本命令与依赖边界
+- L022：错误处理模型
