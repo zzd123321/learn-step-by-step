@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L009：never、unknown 与 any 的边界
+- L010：泛型函数入门
 
 ## 已讲授状态
 
@@ -15,6 +15,7 @@
 - L007：已讲授
 - L008：已讲授
 - L009：已讲授
+- L010：已讲授
 
 ## 小练习状态
 
@@ -27,6 +28,7 @@
 - L007：待完成
 - L008：待完成
 - L009：待完成
+- L010：待完成
 
 ## 已验证命令
 
@@ -93,6 +95,13 @@
 - `node dist/index.js`
 - `sed -n '1,260p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L010-generic-functions/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,220p' dist/index.js`
+
 ## 下一节建议
 
-- L010：泛型函数入门
+- L011：泛型约束
