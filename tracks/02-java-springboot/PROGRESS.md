@@ -2,7 +2,7 @@
 
 ## 当前 lesson 编号
 
-- L020
+- L021
 
 ## 已讲授内容
 
@@ -26,6 +26,7 @@
 - L018：`Queue`：先进先出的任务队列
 - L019：集合框架选择边界：`List`、`Set`、`Map`、`Queue` 怎么选
 - L020：Lambda 表达式和函数式接口：把行为传给方法
+- L021：标准函数式接口：`Predicate`、`Function`、`Consumer`
 
 ## 练习已完成
 
@@ -97,10 +98,14 @@
 - L020：新增 `OrderFilter createdOrderFilter = order -> order.hasStatus("CREATED");` 并传给 `filterOrders`。
 - L020：把 VIP 折扣改成多行 Lambda，并限制最高折扣 `20.0`。
 - L020：给 `OrderFilter` 增加第二个抽象方法，观察 `@FunctionalInterface` 的编译错误。
+- L021：新增 `Predicate<OrderSummary> createdOrder`，筛选 `CREATED` 订单。
+- L021：使用 `paidOrder.negate()`，筛选非已支付订单。
+- L021：新增 `Function<OrderSummary, String>`，输出 `"A1002:PAID"` 这种格式。
+- L021：新增 `Consumer<OrderSummary>`，打印所有原始订单的 `id` 和 `amount`。
 
 ## 当前状态
 
-- 已完成 L001、L002、L003、L004、L005、L006、L007、L008、L009、L010、L011、L012、L013、L014、L015、L016、L017、L018、L019、L020 课程正文与最小可运行示例。
+- 已完成 L001、L002、L003、L004、L005、L006、L007、L008、L009、L010、L011、L012、L013、L014、L015、L016、L017、L018、L019、L020、L021 课程正文与最小可运行示例。
 - L001 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - L002 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - L003 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证；默认状态和自定义参数均已执行。
@@ -121,5 +126,6 @@
 - L018 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - L019 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - L020 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
+- L021 示例已使用本机 Java `25.0.3 LTS` 编译并运行验证。
 - 已按新版课程输出规则重写 L001、L002 文档，去除冗长固定模板，改为围绕知识点展开的学习文档写法。
 - 重写后已重新编译并运行 L001、L002 示例，验证结果与文档记录一致。
