@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L017：抽象类与接口的取舍
+- L018：装饰器的使用边界
 
 ## 已讲授状态
 
@@ -23,6 +23,7 @@
 - L015：已讲授
 - L016：已讲授
 - L017：已讲授
+- L018：已讲授
 
 ## 小练习状态
 
@@ -43,6 +44,7 @@
 - L015：待完成
 - L016：待完成
 - L017：待完成
+- L018：待完成
 
 ## 已验证命令
 
@@ -165,6 +167,13 @@
 - `node dist/index.js`
 - `sed -n '1,260p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L018-decorator-boundaries/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,260p' dist/index.js`
+
 ## 下一节建议
 
-- L018：装饰器的使用边界
+- L019：ESM 与 CommonJS 的差异
