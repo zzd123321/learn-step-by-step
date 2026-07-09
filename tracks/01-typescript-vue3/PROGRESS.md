@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L021：包管理、脚本命令与依赖边界
+- L022：错误处理模型
 
 ## 已讲授状态
 
@@ -27,6 +27,7 @@
 - L019：已讲授
 - L020：已讲授
 - L021：已讲授
+- L022：已讲授
 
 ## 小练习状态
 
@@ -51,6 +52,7 @@
 - L019：待完成
 - L020：待完成
 - L021：待完成
+- L022：待完成
 
 ## 已验证命令
 
@@ -210,6 +212,13 @@
 - `npm run verify`
 - `sed -n '1,220p' package.json`
 
+在 `tracks/01-typescript-vue3/examples/L022-error-handling-model/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,240p' dist/index.js`
+
 ## 下一节建议
 
-- L022：错误处理模型
+- L023：基础测试
