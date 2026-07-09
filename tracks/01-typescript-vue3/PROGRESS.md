@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L014：常用 Utility Types
+- L015：类、构造函数与实例类型
 
 ## 已讲授状态
 
@@ -20,6 +20,7 @@
 - L012：已讲授
 - L013：已讲授
 - L014：已讲授
+- L015：已讲授
 
 ## 小练习状态
 
@@ -37,6 +38,7 @@
 - L012：待完成
 - L013：待完成
 - L014：待完成
+- L015：待完成
 
 ## 已验证命令
 
@@ -138,6 +140,13 @@
 - `node dist/index.js`
 - `sed -n '1,220p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L015-classes-constructors-instances/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,220p' dist/index.js`
+
 ## 下一节建议
 
-- L015：类、构造函数与实例类型
+- L016：访问修饰符与只读字段
