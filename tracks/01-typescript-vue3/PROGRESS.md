@@ -2,7 +2,7 @@
 
 ## 当前 lesson
 
-- L012：泛型接口与泛型类型别名
+- L013：条件类型、映射类型与 infer 入门
 
 ## 已讲授状态
 
@@ -18,6 +18,7 @@
 - L010：已讲授
 - L011：已讲授
 - L012：已讲授
+- L013：已讲授
 
 ## 小练习状态
 
@@ -33,6 +34,7 @@
 - L010：待完成
 - L011：待完成
 - L012：待完成
+- L013：待完成
 
 ## 已验证命令
 
@@ -120,6 +122,13 @@
 - `node dist/index.js`
 - `sed -n '1,220p' dist/index.js`
 
+在 `tracks/01-typescript-vue3/examples/L013-conditional-mapped-infer/` 下已真实执行：
+
+- `tsc --noEmit`
+- `tsc`
+- `node dist/index.js`
+- `sed -n '1,240p' dist/index.js`
+
 ## 下一节建议
 
-- L013：条件类型、映射类型与 infer 入门
+- L014：常用 Utility Types
